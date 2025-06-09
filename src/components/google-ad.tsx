@@ -1,5 +1,7 @@
-import Script from 'next/script';
-import { useEffect } from 'react';
+"use client";
+
+import Script from "next/script";
+import { useEffect } from "react";
 
 export default function GoogleAd() {
   useEffect(() => {
@@ -8,7 +10,7 @@ export default function GoogleAd() {
       // @ts-ignore
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
-      console.error('AdSense error', e);
+      console.error("AdSense error", e);
     }
   }, []);
 
@@ -22,6 +24,6 @@ export default function GoogleAd() {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6091372837465624"
         crossOrigin="anonymous"
       />
-      </>
-      );
-  }
+    </>
+  );
+}
