@@ -1,13 +1,10 @@
 import { Header } from "@/components/header";
 import { SidebarAd } from "@/components/sidebar-ad";
 import { InlineAd } from "@/components/inline-ad";
-import GoogleAd from '@/components/google-ad';
 
 export default function HomePage() {
   return (
     <>
-      <GoogleAd />
-
       <div className="min-h-screen bg-gray-50">
         <Header />
 
