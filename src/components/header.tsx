@@ -15,18 +15,6 @@ export function Header() {
             <Link href="/" className="hover:text-gray-300 transition-colors">
               홈
             </Link>
-            <Link
-              href="/detail"
-              className="hover:text-gray-300 transition-colors"
-            >
-              이슈
-            </Link>
-            <Link
-              href="/detail"
-              className="hover:text-gray-300 transition-colors"
-            >
-              유머
-            </Link>
           </nav>
 
           {/* Mobile menu button */}
