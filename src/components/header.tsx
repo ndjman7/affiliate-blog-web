@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="bg-gray-800 text-white shadow-lg">
+    <header className="bg-blue-800 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold">
-            끝젤 저장소
+            Picksight
           </Link>
 
           {/* Navigation */}
@@ -19,13 +19,13 @@ export function Header() {
               href="/popular"
               className="hover:text-gray-300 transition-colors"
             >
-              끝젤 이슈
+              이슈
             </Link>
             <Link
               href="/recent"
               className="hover:text-gray-300 transition-colors"
             >
-              유머 게시판
+              유머
             </Link>
           </nav>
 
