@@ -16,13 +16,13 @@ export function Header() {
               홈
             </Link>
             <Link
-              href="/popular"
+              href="/detail"
               className="hover:text-gray-300 transition-colors"
             >
               이슈
             </Link>
             <Link
-              href="/recent"
+              href="/detail"
               className="hover:text-gray-300 transition-colors"
             >
               유머

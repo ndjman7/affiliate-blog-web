@@ -1,13 +1,12 @@
 "use client";
-
 import { Header } from "@/components/header";
-import { Home } from "@/components/home";
+import { DetailPage } from "@/components/detail-page";
 
-export default function HomePage() {
+export default function Detail() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <Home />
+      <DetailPage />
     </div>
   );
 }
