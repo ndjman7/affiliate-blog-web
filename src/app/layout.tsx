@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     title: "Picksight - 이슈와 유머를 한눈에",
     description:
       "Picksight는 최신 이슈와 유머를 한 곳에서 볼 수 있는 커뮤니티입니다.",
-    url: "https://picksight.com",
+    url: "https://picksight.kr",
     type: "website",
     images: [
       {
-        url: "https://picksight.com/og-image.png",
+        url: "https://picksight.kr/og-image.png",
         width: 1200,
         height: 630,
         alt: "Picksight - 이슈와 유머를 한눈에",
