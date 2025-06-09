@@ -34,14 +34,14 @@ export const metadata: Metadata = {
       "Picksight는 최신 이슈와 유머를 한 곳에서 볼 수 있는 커뮤니티입니다.",
     url: "https://picksight.com",
     type: "website",
-    // images: [
-    //   {
-    //     url: "https://picksight.com/og-image.png",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Picksight - 이슈와 유머를 한눈에",
-    //   },
-    // ],
+    images: [
+      {
+        url: "https://picksight.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Picksight - 이슈와 유머를 한눈에",
+      },
+    ],
   },
   verification: {
     other: {
@@ -57,6 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
