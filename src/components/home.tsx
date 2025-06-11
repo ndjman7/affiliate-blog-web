@@ -9,6 +9,9 @@ interface Content {
   thumbnail: string;
 }
 
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+
 // 기존 더미 데이터는 제거
 // const contents = [...];
 
@@ -19,12 +22,9 @@ export function Home() {
 
   useEffect(() => {
     axios
-      .get<Content[] | { contents: Content[] }>(
-        "http://localhost:8000/contents"
-      )
+      .get<Content[] | { contents: Content[] }>(`${API_BASE_URL}/contents`)
       .then((res: AxiosResponse<Content[] | { contents: Content[] }>) => {
         // 실제 응답 구조 확인
-        console.log(res.data);
         if (Array.isArray(res.data)) {
           setContents(res.data);
         } else if (Array.isArray(res.data.contents)) {
