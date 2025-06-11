@@ -56,9 +56,17 @@ export function DetailPage({ content }: { content: Content }) {
                 return (
                   <div
                     key={idx}
-                    className="my-6"
-                    dangerouslySetInnerHTML={{ __html: item.body }}
-                  />
+                    className="my-6 relative w-full min-h-[200px]"
+                    style={{ minHeight: 200 }}
+                  >
+                    <Image
+                      src={item.body}
+                      alt={content.title}
+                      fill
+                      style={{ objectFit: "contain" }}
+                      className="rounded-lg"
+                    />
+                  </div>
                 );
               }
               if (item.type === "youtube") {
