@@ -55,7 +55,7 @@ export function Home() {
           contents.map((content) => (
             <Link
               key={content.id}
-              href="/detail"
+              href={`/contents/${content.id}`}
               className="group block bg-white rounded-lg shadow hover:shadow-md transition p-4 border border-gray-100 hover:border-blue-300"
             >
               <div className="flex items-center">
