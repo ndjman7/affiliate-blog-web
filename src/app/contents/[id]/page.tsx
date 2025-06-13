@@ -16,16 +16,18 @@ interface Content {
   bodies: ContentBody[];
 }
 
-export default async function ContentDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+type PageProps = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function ContentDetailPage({ params }: PageProps) {
   let content: Content | null = null;
+  const resolvedParams = await params;
 
   try {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${params.id}`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${resolvedParams.id}`
     );
     content = res.data;
   } catch {
@@ -34,7 +36,6 @@ export default async function ContentDetailPage({
 
   if (!content) return notFound();
 
-  // DetailPage에 content를 props로 전달
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
