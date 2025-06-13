@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
       domains: [
           "localhost",
           "picksight.kr",
+          "cdn.picksight.kr",
       ],
     },
 };
