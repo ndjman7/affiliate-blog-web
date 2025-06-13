@@ -1,5 +1,3 @@
-import { SidebarAd } from "@/components/sidebar-ad";
-import { InlineAd } from "@/components/inline-ad";
 import Image from "next/image";
 
 interface ContentBody {
@@ -19,14 +17,14 @@ export function DetailPage({ content }: { content: Content }) {
   return (
     <div className="relative max-w-7xl mx-auto px-4 py-8">
       {/* Left Sidebar Ad */}
-      <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-48">
-        <SidebarAd position="left" />
-      </div>
+      {/* <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-48"> */}
+        {/* <SidebarAd position="left" /> */}
+      {/* </div> */}
 
       {/* Right Sidebar Ad */}
-      <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2 w-48">
-        <SidebarAd position="right" />
-      </div>
+      {/* <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2 w-48"> */}
+        {/* <SidebarAd position="right" /> */}
+      {/* </div> */}
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto">
@@ -87,15 +85,15 @@ export function DetailPage({ content }: { content: Content }) {
             })}
 
             {/* Second Inline Ad */}
-            <InlineAd type="native" className="my-8" />
+            {/* <InlineAd type="native" className="my-8" /> */}
           </div>
 
           {/* First Inline Ad */}
-          <InlineAd type="banner" className="mb-8" />
+          {/* <InlineAd type="banner" className="mb-8" /> */}
           {/* Third Inline Ad */}
-          <InlineAd type="card" className="my-8" />
+          {/* <InlineAd type="card" className="my-8" /> */}
           {/* Final Inline Ad */}
-          <InlineAd type="banner" className="mt-8" />
+          {/* <InlineAd type="banner" className="mt-8" /> */}
         </article>
       </main>
     </div>
