@@ -57,16 +57,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isProduction = process.env.NODE_ENV === "production";
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <GoogleTagManagerScript />
+        {isProduction && <GoogleTagManagerScript />}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <GoogleTagManagerNoScript />
+        {isProduction && <GoogleTagManagerNoScript />}
         {children}
       </body>
     </html>
