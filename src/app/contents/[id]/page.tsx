@@ -48,7 +48,7 @@ export default async function ContentDetailPage({ params }: PageProps) {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: PageProps;
 }): Promise<Metadata> {
   let content: Content | null = null;
   try {
