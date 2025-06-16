@@ -44,11 +44,7 @@ export default async function ContentDetailPage({ params }: PageProps) {
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps) {
   let content: Content | null = null;
   try {
     const res = await axios.get(
