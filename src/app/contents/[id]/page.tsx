@@ -2,7 +2,6 @@ import { Header } from "@/components/header";
 import { DetailPage } from "@/components/detail-page";
 import { notFound } from "next/navigation";
 import axios from "axios";
-import type { Metadata } from "next";
 
 interface ContentBody {
   type: "text" | "image" | "youtube";
