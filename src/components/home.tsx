@@ -66,7 +66,7 @@ export function Home() {
                   width={96}
                   height={96}
                   className="w-24 h-24 object-cover rounded-md mr-4 transition-transform duration-300 group-hover:scale-110"
-                  priority
+                  priority={false}
                 />
                 <h2
                   className="flex-1 text-xl font-semibold text-blue-800 text-left whitespace-nowrap overflow-hidden text-ellipsis"
