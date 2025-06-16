@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { DetailPage } from "@/components/detail-page";
 import { notFound } from "next/navigation";
 import axios from "axios";
+import { Metadata } from "next";
 
 interface ContentBody {
   type: "text" | "image" | "youtube";
@@ -16,17 +17,17 @@ interface Content {
   bodies: ContentBody[];
 }
 
-type PageProps = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export default async function ContentDetailPage({ params }: PageProps) {
+export default async function ContentDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   let content: Content | null = null;
 
   try {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${params.id}`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${id}`
     );
     content = res.data;
   } catch {
@@ -43,11 +44,16 @@ export default async function ContentDetailPage({ params }: PageProps) {
   );
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
   let content: Content | null = null;
   try {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${params.id}`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${id}`
     );
     content = res.data;
   } catch {
