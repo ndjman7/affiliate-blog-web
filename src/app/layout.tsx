@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import GoogleTagManagerScript from "./GoogleTagManagerScript";
+import GoogleTagManagerNoScript from "./GoogleTagManagerNoScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,10 +61,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <GoogleTagManagerScript />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GoogleTagManagerNoScript />
         {children}
       </body>
     </html>
