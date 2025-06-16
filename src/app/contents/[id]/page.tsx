@@ -18,17 +18,16 @@ interface Content {
 }
 
 type PageProps = {
-  params: Promise<{ id: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export default async function ContentDetailPage({ params }: PageProps) {
   let content: Content | null = null;
-  const resolvedParams = await params;
 
   try {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${resolvedParams.id}`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/contents/${params.id}`
     );
     content = res.data;
   } catch {
@@ -48,7 +47,7 @@ export default async function ContentDetailPage({ params }: PageProps) {
 export async function generateMetadata({
   params,
 }: {
-  params: PageProps;
+  params: { id: string };
 }): Promise<Metadata> {
   let content: Content | null = null;
   try {
