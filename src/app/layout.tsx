@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import GoogleTagManagerScript from "./GoogleTagManagerScript";
 import GoogleTagManagerNoScript from "./GoogleTagManagerNoScript";
-import GoogleAdsenseScript from "./GoogleAdsenseScript";
+import LayoutClient from "./layout-client";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,17 +60,16 @@ export default function RootLayout({
 }>) {
   const isProduction = process.env.NODE_ENV === "production";
   return (
-    <html lang="en">
+    <html lang="ko">
       <head>
         <link rel="icon" href="/favicon.ico" />
         {isProduction && <GoogleTagManagerScript />}
-        {isProduction && <GoogleAdsenseScript />}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {isProduction && <GoogleTagManagerNoScript />}
-        {children}
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );
