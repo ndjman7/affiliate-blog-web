@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getImageUrl } from "../utils/image";
 
 interface ContentBody {
   type: "text" | "image" | "youtube";
@@ -18,12 +19,12 @@ export function DetailPage({ content }: { content: Content }) {
     <div className="relative max-w-7xl mx-auto px-4 py-8">
       {/* Left Sidebar Ad */}
       {/* <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-48"> */}
-        {/* <SidebarAd position="left" /> */}
+      {/* <SidebarAd position="left" /> */}
       {/* </div> */}
 
       {/* Right Sidebar Ad */}
       {/* <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2 w-48"> */}
-        {/* <SidebarAd position="right" /> */}
+      {/* <SidebarAd position="right" /> */}
       {/* </div> */}
 
       {/* Main Content */}
@@ -58,7 +59,7 @@ export function DetailPage({ content }: { content: Content }) {
                     style={{ minHeight: 200 }}
                   >
                     <Image
-                      src={item.body}
+                      src={getImageUrl(item.body)}
                       alt={content.title}
                       fill
                       style={{ objectFit: "contain" }}
