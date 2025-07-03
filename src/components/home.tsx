@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import Image from "next/image";
+import { getImageUrl } from "../utils/image";
 
 interface Content {
   id: number;
@@ -61,7 +62,7 @@ export function Home() {
             >
               <div className="flex items-center">
                 <Image
-                  src={content.thumbnail}
+                  src={getImageUrl(content.thumbnail)}
                   alt={content.title || "콘텐츠 썸네일"}
                   width={96}
                   height={96}
