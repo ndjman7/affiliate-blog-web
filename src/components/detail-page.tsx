@@ -13,17 +13,23 @@ interface Content {
   bodies: ContentBody[];
 }
 
+// 이미지 URL을 환경에 따라 처리하는 함수
+const getImageUrl = (path: string): string => {
+  const isProduction = process.env.NODE_ENV === "production";
+  return isProduction ? path : `http://localhost:8000${path}`;
+};
+
 export function DetailPage({ content }: { content: Content }) {
   return (
     <div className="relative max-w-7xl mx-auto px-4 py-8">
       {/* Left Sidebar Ad */}
       {/* <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-48"> */}
-        {/* <SidebarAd position="left" /> */}
+      {/* <SidebarAd position="left" /> */}
       {/* </div> */}
 
       {/* Right Sidebar Ad */}
       {/* <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2 w-48"> */}
-        {/* <SidebarAd position="right" /> */}
+      {/* <SidebarAd position="right" /> */}
       {/* </div> */}
 
       {/* Main Content */}
@@ -58,7 +64,7 @@ export function DetailPage({ content }: { content: Content }) {
                     style={{ minHeight: 200 }}
                   >
                     <Image
-                      src={item.body}
+                      src={getImageUrl(item.body)}
                       alt={content.title}
                       fill
                       style={{ objectFit: "contain" }}
